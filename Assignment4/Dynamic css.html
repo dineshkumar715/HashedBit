@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<const lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+const text = document.getElementById("text-container");
+  const colorInput = document.getElementById("colorbox");
+  const fontSizeInput = document.getElementById("fontsize");
+  const fontSelect = document.getElementById("list");
+  const cssPropsDisplay = document.getElementById("css-props");
+
+  let isBold = false;
+  let isItalic = false;
+  let isUnderline = false;
+
+  document.getElementById("colorchange").onclick = () => {
+    text.style.color = colorInput.value;
+  };
+
+  fontSizeInput.oninput = () => {
+    text.style.fontSize = fontSizeInput.value + "px";
+  };
+
+  document.getElementById("italic").onclick = () => {
+    isItalic = !isItalic;
+    text.style.fontStyle = isItalic ? "italic" : "normal";
+  };
+
+  document.getElementById("underline").onclick = () => {
+    isUnderline = !isUnderline;
+    text.style.textDecoration = isUnderline ? "underline" : "none";
+  };
+
+  document.getElementById("bold").onclick = () => {
+    isBold = !isBold;
+    text.style.fontWeight = isBold ? "bold" : "normal";
+  };
+
+  fontSelect.onchange = () => {
+    text.style.fontFamily = fontSelect.value;
+  };
+
+  document.getElementById("getstyle").onclick = () => {
+    const style = window.getComputedStyle(text);
+    const cssProps = `
+      color: ${style.color};
+      font-size: ${style.fontSize};
+      font-family: ${style.fontFamily};
+      font-style: ${style.fontStyle};
+      text-decoration: ${style.textDecorationLine};
+      font-weight: ${style.fontWeight};
+    `;
+    cssPropsDisplay.textContent = cssProps.replace(/\s+/g, ' ').trim();
+  };
+20:48
+  
+</body>
+</html>
