@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tax Calculator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  input {
+    padding: 8px;
+    width: 200px;
+    margin-right: 10px;
+  }
+  button {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  #result {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<h1>Find Tax Amount</h1>
+<input type="number" id="salary" placeholder="Enter Salary" />
+<button onclick="calculateTax()">Calculate Tax</button>
+
+<div id="result"></div>
+
+<script>
+// Function to calculate tax based on salary
+function findTax(salary) {
+  let taxRate = 0;
+  switch (true) {
+    case (salary > 0 && salary <= 500000):
+      taxRate = 0;
+      break;
+    case (salary > 500000 && salary <= 1000000):
+      taxRate = 0.10;
+      break;
+    case (salary > 1000000 && salary <= 1500000):
+      taxRate = 0.20;
+      break;
+    case (salary > 1500000):
+      taxRate = 0.30;
+      break;
+    default:
+      taxRate = 0;
+  }
+  return salary * taxRate;
+}
+
+function calculateTax() {
+  const salaryInput = document.getElementById('salary').value;
+  const salary = parseFloat(salaryInput);
+  if (isNaN(salary) || salary < 0) {
+    document.getElementById('result').textContent = 'Please enter a valid positive salary.';
+    return;
+  }
+  const taxAmount = findTax(salary);
+  document.getElementById('result').textContent = `Tax on salary ${salary} is: ${taxAmount}`;
+}
+</script>
+
+</body>
+</html>
