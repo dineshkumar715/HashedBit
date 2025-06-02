@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Webpage Layout</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: #fff;
+  }
+
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .social-links a {
+    color: #fff;
+    margin-left: 15px;
+    text-decoration: none;
+  }
+
+  /* Menubar */
+  nav.menubar {
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  nav.menubar a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  /* Layout: Sidebar and Main */
+  .container {
+    display: flex;
+  }
+
+  /* Sidebar */
+  aside.sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 15px;
+  }
+
+  /* Main Content */
+  main.content {
+    flex: 1;
+    padding: 15px;
+  }
+
+  /* Three boxes in main */
+  .boxes {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .box {
+    background-color: #e2e2e2;
+    padding: 10px;
+    flex: 1;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+
+  .box h3 {
+    margin-top: 0;
+  }
+
+  .box img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* Responsive adjustments (optional) */
+  @media(max-width: 768px){
+    .container {
+      flex-direction: column;
+    }
+    aside.sidebar {
+      width: 100%;
+    }
+    .boxes {
+      flex-direction: column;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+<img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/sparrow-logo-design-%7C-sparrow-logo-design-template-4d36b582476032208ba159a66abb95c1_screen.jpg?ts=1679847253" width="100"height="100">
+  <div class="social-links">
+    <a href="#">Facebook</a>
+    <a href="#">Twitter</a>
+    <a href="#">Instagram</a>
+  </div>
+</header>
+
+<!-- Menubar -->
+<nav class="menubar">
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+</nav>
+
+<!-- Main content with Sidebar and Content -->
+<div class="container">
+  <!-- Sidebar with custom data -->
+  <aside class="sidebar">
+    <h3>Custom Data</h3>
+    <p>This is some custom information or navigation links.</p>
+  </aside>
+
+  <!-- Main content -->
+  <main class="content">
+    <!-- Three boxes -->
+    <div class="boxes">
+      <div class="box">
+        <h3>Title 1</h3>
+        <img src="https://via.placeholder.com/150" alt="Image 1" />
+        <p>This is description for box 1.</p>
+      </div>
+      <div class="box">
+        <h3>Title 2</h3>
+        <img src="https://via.placeholder.com/150" alt="Image 2" />
+        <p>This is description for box 2.</p>
+      </div>
+      <div class="box">
+        <h3>Title 3</h3>
+        <img src="https://via.placeholder.com/150" alt="Image 3" />
+        <p>This is description for box 3.</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>Sample text: &copy; 2025 Your Website. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
